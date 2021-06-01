@@ -10,6 +10,9 @@ public class Main{
     System.out.println("Which restaurant would you like to order from: ");
     System.out.println(" - Bob's Burgers \n - Ina's Italian");
     restaurant = keyboard.readLine();
-    System.out.println(restaurant);
+    
+    Menu choice = new Menu(restaurant);
+    System.out.println(choice);
+    System.out.println(" - Appetizers \n - Main Courses \n - Desserts \n - Drinks");
   }
 }

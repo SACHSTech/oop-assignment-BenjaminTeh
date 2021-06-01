@@ -1,5 +1,5 @@
 package Project;
 
-public class Section extends Menu{
+public class Section{
   
 }
