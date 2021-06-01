@@ -4,6 +4,7 @@ import java.io.*;
 public class Main{
   public static void main(String[] args) throws IOException{
     String restaurant = "";
+    String section = "";
     BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));
 
     System.out.println("Welcome to App Delivery Service!");
@@ -14,5 +15,10 @@ public class Main{
     Menu choice = new Menu(restaurant);
     System.out.println(choice);
     System.out.println(" - Appetizers \n - Main Courses \n - Desserts \n - Drinks");
+    section = keyboard.readLine();
+
+    Order menu = new Order(restaurant, section);
+    System.out.println(menu);
+    
   }
 }
