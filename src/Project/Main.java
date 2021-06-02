@@ -5,6 +5,7 @@ public class Main{
   public static void main(String[] args) throws IOException{
     String restaurant = "";
     String section = "";
+    String item = "";
     BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));
 
     System.out.println("Welcome to App Delivery Service!");
@@ -17,7 +18,9 @@ public class Main{
     section = keyboard.readLine();
 
     Order menu = new Order(restaurant, section);
+    System.out.println("Select one of the following: ");
     System.out.println(menu.getOrders());
+    item = keyboard.readLine();
     
   }
 }
