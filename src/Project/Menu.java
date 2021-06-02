@@ -1,6 +1,6 @@
 package Project;
 
-public class Menu{
+public abstract class Menu{
   private String restaurant = "";
 
   public Menu(String menuChoice){
@@ -9,9 +9,7 @@ public class Menu{
   public String getName(){
     return restaurant;
   }
-  public String toString(){
-    return "You have chosen " + restaurant + ". Which section would you like to order from?";
-  }
+
   
-  
+  public abstract String getOrders();
 }

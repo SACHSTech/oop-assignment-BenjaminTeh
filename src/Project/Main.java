@@ -12,13 +12,12 @@ public class Main{
     System.out.println(" - Bob's Burgers \n - Ina's Italian");
     restaurant = keyboard.readLine();
     
-    Menu choice = new Menu(restaurant);
-    System.out.println(choice);
+    System.out.println("You have chosen " + restaurant + ". Which section would you like to order from?");
     System.out.println(" - Appetizers \n - Main Courses \n - Desserts \n - Drinks");
     section = keyboard.readLine();
 
     Order menu = new Order(restaurant, section);
-    System.out.println(menu);
+    System.out.println(menu.getOrders());
     
   }
 }
