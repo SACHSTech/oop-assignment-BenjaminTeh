@@ -11,7 +11,7 @@ public class Order extends Menu{
     this.name = name;
     this.section = sectionChoice;
   }
-
+// Continues to print out the menus and prices available at each restaurant. 
   public String getOrders(){
     if(name.equalsIgnoreCase("Bob's Burgers") && section.equalsIgnoreCase("Appetizers")){
       orderOne = " - Fries (3.99)";

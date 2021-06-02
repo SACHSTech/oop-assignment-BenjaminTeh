@@ -7,7 +7,7 @@ public class Item{
   public Item(String theName){
     name = theName;
   }
-
+// Double containing the actual price values for each menu order.
   public double getPrice(){
     if(name.equalsIgnoreCase("Fries")){
       price = 3.99;
@@ -57,6 +57,7 @@ public class Item{
       price = 3.99;
       return price;
     }
+// In case of misinput, do not charge customer.
     else{
       return 0;
     }
