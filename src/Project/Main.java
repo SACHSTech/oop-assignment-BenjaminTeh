@@ -6,6 +6,7 @@ public class Main{
     String restaurant = "";
     String section = "";
     String item = "";
+    int balanceTracker[];
     BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));
 
     System.out.println("Welcome to App Delivery Service!");
@@ -13,7 +14,13 @@ public class Main{
     System.out.println(" - Bob's Burgers \n - Ina's Italian");
     restaurant = keyboard.readLine();
     
-    System.out.println("You have chosen " + restaurant + ". Which section would you like to order from?");
+    for(int i = 1; i > 0; i++){
+    System.out.println("Are you done ordering? 0 = yes, 1 = no");
+    i = Integer.parseInt(keyboard.readLine());
+    if(i == 0){
+      break;
+    }
+    System.out.println("Which section would you like to order from?");
     System.out.println(" - Appetizers \n - Main Courses \n - Desserts");
     section = keyboard.readLine();
 
@@ -21,6 +28,9 @@ public class Main{
     System.out.println("Select one of the following: ");
     System.out.println(menu.getOrders());
     item = keyboard.readLine();
+    Item order = new Item(item);
+    System.out.println(order.getPrice());
+    }
     
   }
 }

@@ -5,15 +5,13 @@ public class Order extends Menu{
   private String orderTwo;
   private String name;
   private String section;
+
   public Order(String name, String sectionChoice){
     super(name);
     this.name = name;
     this.section = sectionChoice;
   }
 
-  public void setSection(String sectionChoice){
-    section = sectionChoice;
-  }
   public String getOrders(){
     if(name.equalsIgnoreCase("Bob's Burgers") && section.equalsIgnoreCase("Appetizers")){
       orderOne = " - Fries (3.99)";
@@ -22,11 +20,11 @@ public class Order extends Menu{
     }
     else if(name.equalsIgnoreCase("Bob's Burgers") && section.equalsIgnoreCase("Main Courses")){
       orderOne = " - Poutine (5.99)";
-      orderTwo = " - Beef Burger (4.99)";
+      orderTwo = " - Burger (4.99)";
       return orderOne + "\n" + orderTwo;
     }
     else if(name.equalsIgnoreCase("Bob's Burgers") && section.equalsIgnoreCase("Desserts")){
-      orderOne = " - Ice Cream (1.99)";
+      orderOne = " - Vanilla Ice Cream (1.99)";
       orderTwo = " - Chocolate Ice Cream (1.99)";
       return orderOne + "\n" + orderTwo;
     }
@@ -46,7 +44,7 @@ public class Order extends Menu{
       return orderOne + "\n" + orderTwo;
     }
     else{
-      return "You did not input the options properly!";
+      return "You did not input the options properly! Please try again...";
     }
   }
 
