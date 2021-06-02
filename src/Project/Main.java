@@ -13,7 +13,7 @@ public class Main{
     restaurant = keyboard.readLine();
     
     System.out.println("You have chosen " + restaurant + ". Which section would you like to order from?");
-    System.out.println(" - Appetizers \n - Main Courses \n - Desserts \n - Drinks");
+    System.out.println(" - Appetizers \n - Main Courses \n - Desserts");
     section = keyboard.readLine();
 
     Order menu = new Order(restaurant, section);
