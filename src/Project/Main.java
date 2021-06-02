@@ -1,16 +1,21 @@
 package Project;
 import java.io.*;
 import java.util.Arrays;
+import java.text.*;
 
 public class Main{
   public static void main(String[] args) throws IOException{
     String restaurant = "";
     String section = "";
     String item = "";
+    String getTips = "";
+    double finalTotal = 0;
     int check;
     int balanceLength;
-    double balanceTracker[] = new double[10];
+    double[] balanceTracker = new double[10];
+    String[] orderTracker = new String[10];
     BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));
+    NumberFormat numberFormat = new DecimalFormat("#,###.00");
 
     System.out.println("Welcome to App Delivery Service!");
     System.out.println("Which restaurant would you like to order from: ");
@@ -34,10 +39,30 @@ public class Main{
     item = keyboard.readLine();
     Item order = new Item(item);
     balanceTracker[balanceLength] = order.getPrice();
+    orderTracker[balanceLength] = item;
     }
+
     for(int j = 0; j < balanceLength; j++){
-      System.out.println(balanceTracker[j]);
+      System.out.println(orderTracker[j] + " - " + balanceTracker[j]);
     }
+
+    System.out.println("-------------------");
+
+    Balance receipt = new Balance(balanceTracker);
+    System.out.println("Subtotal: " + receipt.getSubTotal());
+    System.out.println("Taxes: " + numberFormat.format(receipt.getTax()));
+    System.out.println("Would you like to give tips? Type y to confirm");
+    getTips = keyboard.readLine();
+
+    if(getTips.equalsIgnoreCase("y")){
+      System.out.println("Tips: " + numberFormat.format(receipt.getTips()));
+      finalTotal = receipt.getSubTotal() + receipt.getTax() + receipt.getTips();
+    }
+    else{
+      finalTotal = receipt.getSubTotal() + receipt.getTax();
+    }
+
+    System.out.println("Total: " + numberFormat.format(finalTotal));
     
   }
 }
